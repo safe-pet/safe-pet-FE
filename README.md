@@ -8,5 +8,8 @@ react-query
 sweetalert2
 react-intersection-observer
 
+axios
+json-server
+
 OPEN_API
 react-kakao-maps-sdk
