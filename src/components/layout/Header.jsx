@@ -1,8 +1,17 @@
-import { ResetTvRounded } from "@mui/icons-material";
+import styled from "styled-components";
+
+export const Header = () => {
 
 
-export const Header = ()=>{
-    return(
-        <div>header</div>
-    )
-}
+  return (
+    <section>
+      <div>
+        <button>로그인</button>
+        <button>회원가입</button>
+      </div>
+      <div>
+        메인로고
+      </div>
+    </section>
+  );
+};
