@@ -4,10 +4,15 @@ import { Footer } from "./Footer";
 
 export const Layout = ({ children }) => {
   return (
-    <div>
+    <LayoutContainer>
       <Header />
       {children}
       <Footer />
-    </div>
+    </LayoutContainer>
   );
 };
+
+const LayoutContainer = styled.div`
+  margin: auto;
+  
+`;

@@ -1,3 +1,10 @@
+import styled from "styled-components";
+
 export const Footer = () => {
-  return <div>footer</div>;
+  return <FooterSet>footer</FooterSet>;
 };
+
+const FooterSet = styled.div`
+  position: absolute;
+  bottom: 0;
+`;
