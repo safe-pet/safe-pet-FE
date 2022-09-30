@@ -45,6 +45,7 @@ const SignUpButtons = styled.ul`
   background-color: #ffdb5a;
   & li:first-child {
     border-radius: 10px 0 0 10px;
+    border-right: 1px solid  #c4c4c4;
   }
   & li:last-child{
     border-radius: 0 10px 10px 0px;
