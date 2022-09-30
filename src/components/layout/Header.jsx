@@ -81,9 +81,9 @@ const LogoImage = styled.img`
   border-radius: 20px;
   cursor: pointer;
 
-  animation: fadein 0.8s;
+  animation: headerFadein 0.8s;
   & {
-    @keyframes fadein {
+    @keyframes headerFadein {
       from {
         height: 0;
         opacity: 0;

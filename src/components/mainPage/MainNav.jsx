@@ -23,10 +23,23 @@ const NavContainer = styled.section`
   li {
     list-style: none;
   }
+
+  animation: MainNavFadein 0.8s;
+	
+	&{
+	@keyframes MainNavFadein {
+   	 from {
+       	 opacity:0;
+    	}
+   	 to {
+      	  opacity:1;
+   	 }		
+}}
 `;
 
 const MainNavStyle = styled.nav`
   display: flex;
+  
 `;
 
 const NavListBox = styled.ul`
@@ -36,8 +49,8 @@ const NavListBox = styled.ul`
   display: flex;
   align-items: center;
 
-  border-radius:10px;
-  background-color:#FFF88C;
+  border-radius: 10px;
+  background-color: #fff88c;
 
   & li:first-child {
     border-radius: 10px 0px 0px 10px;
@@ -54,13 +67,15 @@ const NavLists = styled.li`
 
   width: 150px;
   height: 40px;
-  font-size:1rem;
-  font-weight:bold;
+  font-size: 1rem;
+  font-weight: bold;
   background-color: transparent;
-  transition : 0.4s;
+  transition: 0.4s;
   cursor: pointer;
 
-  &:hover{
-    background-color:#FFDB5A;
+  &:hover {
+    background-color: #ffdb5a;
   }
+
+  
 `;

@@ -5,6 +5,6 @@ export const Footer = () => {
 };
 
 const FooterSet = styled.div`
+  margin-top: 120px;
   position: absolute;
-  bottom: 0;
 `;
