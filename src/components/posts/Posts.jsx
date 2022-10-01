@@ -10,6 +10,14 @@ export const Posts = () => {
         <PostCard />
         <PostCard />
         <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
       </GridBox>
     </PostsContainer>
   );

@@ -1,54 +1,183 @@
 import styled from "styled-components";
 
 export const Buttons = ({ size, useType, content }) => {
-  let buttonSize = [];
-  let buttonType = "";
-  if (size === "overSize") {
-    buttonSize = [150, 50, 1.3];
-  }
-  if (size === "middle") {
-    buttonSize = [100, 40, 1.1];
-  }
-  if (size === "small") {
-    buttonSize = [80, 30, 0.8];
-  }
   if (useType === "main") {
-    buttonType = "#FFF455";
+    if (size === "overSize") {
+      return (
+        <BtnWrapSpan>
+          <OverSize className="main" type="button">
+            {content}
+          </OverSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "middle") {
+      return (
+        <BtnWrapSpan>
+          <MiddleSize className="main" type="button">
+            {content}
+          </MiddleSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "small") {
+      return (
+        <BtnWrapSpan>
+          <SmallSize className="main" type="button">
+            {content}
+          </SmallSize>
+        </BtnWrapSpan>
+      );
+    }
   }
   if (useType === "cancel") {
-    buttonType = "#FFF88C";
+    if (size === "overSize") {
+      return (
+        <BtnWrapSpan>
+          <OverSize className="cancel" type="button">
+            {content}
+          </OverSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "middle") {
+      return (
+        <BtnWrapSpan>
+          <MiddleSize className="cancel" type="button">
+            {content}
+          </MiddleSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "small") {
+      return (
+        <BtnWrapSpan>
+          <SmallSize className="cancel" type="button">
+            {content}
+          </SmallSize>
+        </BtnWrapSpan>
+      );
+    }
   }
   if (useType === "warning") {
-    buttonType = "#FFBD13";
+    if (size === "overSize") {
+      return (
+        <BtnWrapSpan>
+          <OverSize className="warning" type="button">
+            {content}
+          </OverSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "middle") {
+      return (
+        <BtnWrapSpan>
+          <MiddleSize className="warning" type="button">
+            {content}
+          </MiddleSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "small") {
+      return (
+        <BtnWrapSpan>
+          <SmallSize className="warning" type="button">
+            {content}
+          </SmallSize>
+        </BtnWrapSpan>
+      );
+    }
   }
   if (useType === "etc") {
-    buttonType = "#FFDB5A";
+    if (size === "overSize") {
+      return (
+        <BtnWrapSpan>
+          <OverSize className="etc" type="button">
+            {content}
+          </OverSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "middle") {
+      return (
+        <BtnWrapSpan>
+          <MiddleSize className="etc" type="button">
+            {content}
+          </MiddleSize>
+        </BtnWrapSpan>
+      );
+    }
+    if (size === "small") {
+      return (
+        <BtnWrapSpan>
+          <SmallSize className="etc" type="button">
+            {content}
+          </SmallSize>
+        </BtnWrapSpan>
+      );
+    }
   }
 
-  return (
-    <PersonalBtns
-      style={{
-        width: `${buttonSize[0]}px`,
-        height: `${buttonSize[1]}px`,
-        fontSize: `${buttonSize[2]}rem`,
-        backgroundColor: buttonType,
-      }}
-      type="button"
-    >
-      {content}
-    </PersonalBtns>
-  );
+  return <OverSize type="button">{content}</OverSize>;
 };
 
-const PersonalBtns = styled.button`
+const BtnWrapSpan = styled.span`
+  & .main {
+    background-color: #fff455;
+  }
+  & .cancel {
+    background-color: #fff88c;
+  }
+  & .warning {
+    background-color: #ffbd13;
+  }
+  & .etc {
+    background-color: #ffdb5a;
+  }
+`;
+
+const OverSize = styled.button`
+  width: 150px;
+  height: 50px;
+  font-size: 1.3rem;
   border: none;
   border-radius: 10px;
   font-weight: bold;
   color: black;
   cursor: pointer;
-  transition:background-color 0.6s;
+  transition: 0.6s;
 
   &:hover {
-    background-color:black;
+    background-color: #ffbd13;
+  }
+`;
+const MiddleSize = styled.button`
+  width: 100px;
+  height: 40px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: 0.6s;
+
+  &:hover {
+    background-color: #ffbd13;
+  }
+`;
+const SmallSize = styled.button`
+  width: 80px;
+  height: 30px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: 0.6s;
+
+  &:hover {
+    background-color: #ffbd13;
   }
 `;
