@@ -33,6 +33,7 @@ export const Buttons = ({ size, useType, content }) => {
         fontSize: `${buttonSize[2]}rem`,
         backgroundColor: buttonType,
       }}
+      type="button"
     >
       {content}
     </PersonalBtns>
@@ -45,11 +46,9 @@ const PersonalBtns = styled.button`
   font-weight: bold;
   color: black;
   cursor: pointer;
-  transition: 0.6s;
+  transition:background-color 0.6s;
 
   &:hover {
-    color: white;
-    background-color: black;
-    box-shadow: 1px 1px 3px 1px black;
+    background-color:black;
   }
 `;

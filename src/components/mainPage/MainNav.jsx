@@ -16,6 +16,7 @@ export const MainNav = () => {
 };
 
 const NavContainer = styled.section`
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
 
@@ -25,21 +26,21 @@ const NavContainer = styled.section`
   }
 
   animation: MainNavFadein 0.8s;
-	
-	&{
-	@keyframes MainNavFadein {
-   	 from {
-       	 opacity:0;
-    	}
-   	 to {
-      	  opacity:1;
-   	 }		
-}}
+
+  & {
+    @keyframes MainNavFadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 `;
 
 const MainNavStyle = styled.nav`
   display: flex;
-  
 `;
 
 const NavListBox = styled.ul`
@@ -76,6 +77,4 @@ const NavLists = styled.li`
   &:hover {
     background-color: #ffdb5a;
   }
-
-  
 `;

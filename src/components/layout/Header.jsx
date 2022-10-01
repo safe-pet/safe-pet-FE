@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Header = () => {
   return (
     <HeaderSection>
@@ -21,7 +20,7 @@ export const Header = () => {
 };
 
 const HeaderSection = styled.section`
-  height: 270px;
+  height: 300px;
   padding: 30px;
 
   background-color: #fff88c;
@@ -32,22 +31,23 @@ const SignUpMenu = styled.div`
   justify-content: flex-end;
   margin-bottom: 10px;
 
-  & ul,li{
-    list-style:none;
+  & ul,
+  li {
+    list-style: none;
   }
 `;
 const SignUpButtons = styled.ul`
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   display: flex;
-  border-radius:10px;
+  border-radius: 10px;
 
   background-color: #ffdb5a;
   & li:first-child {
     border-radius: 10px 0 0 10px;
-    border-right: 1px solid  #c4c4c4;
+    border-right: 1px solid #c4c4c4;
   }
-  & li:last-child{
+  & li:last-child {
     border-radius: 0 10px 10px 0px;
   }
 `;
@@ -56,21 +56,21 @@ const JoinButton = styled.li`
   justify-content: center;
   align-items: center;
 
-  width:80px;
-  height:30px;
-  font-size:0.8rem;
-  background-color:#FFDB5A;
+  width: 80px;
+  height: 30px;
+  font-size: 0.8rem;
+  background-color: #ffdb5a;
 
   border: none;
   font-weight: bold;
   color: black;
   cursor: pointer;
-  transition:0.6s;
-  
-  &:hover{
-    background-color:#FFBD13 ;
+  transition: 0.6s;
+
+  &:hover {
+    background-color: #ffbd13;
   }
-`
+`;
 
 const LogoBox = styled.div`
   display: flex;

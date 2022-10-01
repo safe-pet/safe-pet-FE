@@ -10,20 +10,6 @@ export const Posts = () => {
         <PostCard />
         <PostCard />
         <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
       </GridBox>
     </PostsContainer>
   );
@@ -51,7 +37,6 @@ const GridBox = styled.div`
   justify-content: center;
   align-items: center;
   justify-items: center;
-  grid-template-rows: 300px 300px;
   grid-template-columns: 350px 350px 350px 350px;
-
+  grid-gap: 30px;
 `;

@@ -59,33 +59,25 @@ const CardBody = styled.div`
   flex-direction: column;
 `;
 
-const CardBodyWrap = styled.div`
-    
-`
+const CardBodyWrap = styled.div``;
 
 const CardBodyTop = styled.div`
-    padding:10px;
-    display: flex;
-`
+  padding: 10px;
+  display: flex;
+`;
 
 const AvaterImg = styled.img`
   width: 40px;
   height: 40px;
-  margin-right:10px;
-  border-radius:20px;
+  margin-right: 10px;
+  border-radius: 20px;
 `;
 
-const ContentWrap = styled.div`
-    
-`
+const ContentWrap = styled.div``;
 
-const PostTitle = styled.div`
-    
-`
-const TimeToDate = styled.span`
-    
-`
+const PostTitle = styled.div``;
+const TimeToDate = styled.span``;
 
 const Badges = styled.div`
-    padding:10px;
-`
+  padding: 10px;
+`;
