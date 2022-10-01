@@ -1,14 +1,42 @@
 import styled from "styled-components";
 
-export const MainNav = () => {
+export const MainNav = ({ status, changeStatus }) => {
   return (
     <NavContainer>
       <MainNavStyle>
         <NavListBox>
-          <NavLists>분양받기</NavLists>
-          <NavLists>커뮤니티</NavLists>
-          <NavLists>집사 TIP!</NavLists>
-          <NavLists>사이트소개</NavLists>
+          <NavLists
+            style={
+              status === "분양받기" ? { backgroundColor: "#ffdb5a" } : null
+            }
+            onClick={() => changeStatus("분양받기")}
+          >
+            분양받기
+          </NavLists>
+          <NavLists
+            style={
+              status === "커뮤니티" ? { backgroundColor: "#ffdb5a" } : null
+            }
+            onClick={() => changeStatus("커뮤니티")}
+          >
+            커뮤니티
+          </NavLists>
+          <NavLists
+            style={
+              status === "집사 TIP!" ? { backgroundColor: "#ffdb5a" } : null
+            }
+            onClick={() => changeStatus("집사 TIP!")}
+          >
+            집사 TIP!
+          </NavLists>
+          <NavLists
+            style={
+              status === "사이트소개" ? { backgroundColor: "#ffdb5a" } : null
+            }
+            onClick={() => changeStatus("사이트소개")}
+          >
+            사이트소개
+          </NavLists>
         </NavListBox>
       </MainNavStyle>
     </NavContainer>

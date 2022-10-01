@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 import { PostCard } from "./PostCard";
 
-export const Posts = () => {
+export const Posts = ({status}) => {
   return (
-    <PostsContainer>
+    <PostsContainer style={status!=="분양받기"?{display:"none"}:null}>
       <GridBox>
         <PostCard />
         <PostCard />

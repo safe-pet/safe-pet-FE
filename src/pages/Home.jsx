@@ -11,15 +11,19 @@ import { useState } from "react";
 export const Home = () => {
 const [navStatus, setNavStatus] = useState("분양받기");
 
+const changeStatus = (value)=>{
+  setNavStatus(value)
+}
+console.log(navStatus);
 
 
   return (
     <Layout>
-      <MainNav />
-      <Posts />
-      <Community />
-      <TipShared />
-      <Introduction />
+      <MainNav status={navStatus} changeStatus={changeStatus}/>
+      <Posts status={navStatus} />
+      <Community status={navStatus} />
+      <TipShared status={navStatus} />
+      <Introduction status={navStatus} />
     </Layout>
   );
 };
