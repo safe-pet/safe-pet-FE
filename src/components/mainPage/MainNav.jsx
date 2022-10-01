@@ -7,7 +7,7 @@ export const MainNav = () => {
         <NavListBox>
           <NavLists>분양받기</NavLists>
           <NavLists>커뮤니티</NavLists>
-          <NavLists>기타</NavLists>
+          <NavLists>집사 TIP!</NavLists>
           <NavLists>사이트소개</NavLists>
         </NavListBox>
       </MainNavStyle>

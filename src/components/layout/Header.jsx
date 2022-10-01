@@ -1,14 +1,34 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { Buttons } from "../useInForm/Buttons";
 
 export const Header = () => {
+  const [isLogedIn, setIsLogedIn] = useState(true);
+
   return (
     <HeaderSection>
-      <SignUpMenu>
-        <SignUpButtons>
-          <JoinButton>로그인</JoinButton>
-          <JoinButton>회원가입</JoinButton>
-        </SignUpButtons>
-      </SignUpMenu>
+      {isLogedIn === false ? (
+        <SignUpMenu>
+          <SignUpButtons>
+            <JoinButton>로그인</JoinButton>
+            <JoinButton>회원가입</JoinButton>
+          </SignUpButtons>
+        </SignUpMenu>
+      ) : (
+        <LogedNav>
+          <AlertImg
+            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdeuuO5%2FbtrNwGz1E41%2FJEpzovQ5qxqlMh8veCF75k%2Fimg.png"
+            alt="https://icons8.com/icon/123441/favorites icon by https://icons8.com Icons8"
+          />
+          <ScrapImg
+            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcZ1F2H%2FbtrNv1dz1CN%2FfsUP1e0HXOryUy9rfjlP40%2Fimg.png"
+            alt="https://icons8.com/icon/123441/favorites icon by https://icons8.com Icons8"
+          />
+          <Buttons size="small" useType="etc" content="마이페이지" />
+          <Buttons size="small" useType="etc" content="로그아웃" />
+        </LogedNav>
+      )}
+
       <LogoBox>
         <LogoImage
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbIgTs9%2FbtrNoKW1lWz%2FWq4Nhu3yWUs39ljni5VIN1%2Fimg.png"
@@ -69,6 +89,55 @@ const JoinButton = styled.li`
 
   &:hover {
     background-color: #ffbd13;
+  }
+`;
+
+const LogedNav = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+
+  & button:first-child {
+    margin-right: 20px;
+  }
+  animation: LogedNavFadein 1s;
+  & {
+    @keyframes LogedNavFadein {
+      from {
+        opacity: 0;
+        width: 95%;
+      }
+      to {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+`;
+const AlertImg = styled.img`
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  border-radius:10px;
+  background-color:white;
+  transition: 0.6s;
+  &:hover{
+    background-color:#fff88c;
+  }
+`;
+const ScrapImg = styled.img`
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  border-radius:10px;
+  background-color:white;
+  transition: 0.6s;
+  &:hover{
+    background-color:#fff88c;
   }
 `;
 
