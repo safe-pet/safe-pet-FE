@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Buttons } from "../components/useInForm/Buttons";
 import { Inputs } from "../components/useInForm/Inputs";
 
 export const Login = () => {
+  const navigate = useNavigate();
   return (
     <LoginContainer>
       <LogoBox>
@@ -32,8 +34,9 @@ export const Login = () => {
         </InputWrap>
         <ButtonsWrap>
           <Buttons size="middle" useType="main" content="로그인" />
-          <Buttons size="middle" useType="cancel" content="회원가입" />
-          
+          <div onClick={()=>{navigate("/signup")}}>
+            <Buttons size="middle" useType="cancel" content="회원가입" />
+          </div>
         </ButtonsWrap>
       </LoginForm>
     </LoginContainer>
@@ -41,38 +44,48 @@ export const Login = () => {
 };
 
 const LoginContainer = styled.div`
-    margin:auto;
-    margin-top:12vw;
-    padding:10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width:500px;
-    height:600px;
+  margin: auto;
+  margin-top: 12vw;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 600px;
 
-    border-radius:20px;
-    box-shadow: 3px 3px 5px 3px  #FFF455;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px 3px #fff455;
+  
+  animation: loginFade 0.7s;
+  & {
+    @keyframes loginFade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 `;
 
 const LogoBox = styled.div`
-    cursor: pointer;
+  cursor: pointer;
 `;
 const MainLogo = styled.img`
-    width:300px;
-    height:220px;
-    margin:30px;
-
+  width: 300px;
+  height: 220px;
+  margin: 30px;
 `;
 
 const LoginForm = styled.form``;
 
 const InputWrap = styled.div`
-    margin-bottom:40px;
-`
-
+  margin-bottom: 40px;
+`;
 
 const ButtonsWrap = styled.div`
-    margin-top:50px;
-    display: flex;
-    justify-content: space-around;
-`
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+`;

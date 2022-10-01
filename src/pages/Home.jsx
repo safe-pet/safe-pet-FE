@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Layout } from "../components/layout/Layout";
 import { MainNav } from "../components/mainPage/MainNav";
 import { Posts } from "../components/posts/Posts";
@@ -9,17 +8,15 @@ import { Introduction } from "../components/mainPage/Introduction";
 import { useState } from "react";
 
 export const Home = () => {
-const [navStatus, setNavStatus] = useState("분양받기");
+  const [navStatus, setNavStatus] = useState("분양받기");
 
-const changeStatus = (value)=>{
-  setNavStatus(value)
-}
-console.log(navStatus);
-
+  const changeStatus = (value) => {
+    setNavStatus(value);
+  };
 
   return (
     <Layout>
-      <MainNav status={navStatus} changeStatus={changeStatus}/>
+      <MainNav status={navStatus} changeStatus={changeStatus} />
       <Posts status={navStatus} />
       <Community status={navStatus} />
       <TipShared status={navStatus} />

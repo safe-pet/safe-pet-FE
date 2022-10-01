@@ -1,8 +1,18 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { OwnerJoin } from "../components/signUpTab/OwnerJoin";
 import { PersonalJoin } from "../components/signUpTab/PersonalJoin";
 
 export const SignUp = () => {
+  const [signStatus, setSignStatus] = useState("일반");
+
+  const personal = ()=>{
+    setSignStatus("일반")
+  }
+  const Owner = ()=>{
+    setSignStatus("사업자")
+  }
+
   return (
     <LoginContainer>
       <LogoBox>
@@ -13,14 +23,13 @@ export const SignUp = () => {
       </LogoBox>
       <SignUpMenu>
         <SignUpButtons>
-          <JoinButton>회원가입(일반)</JoinButton>
-          <JoinButton>피분양자 회원가입(사업자)</JoinButton>
+          <JoinButton onClick={personal} style={signStatus==="일반"?{backgroundColor:"#FFBD13"}:null}>회원가입(일반)</JoinButton>
+          <JoinButton onClick={Owner} style={signStatus==="사업자"?{backgroundColor:"#FFBD13"}:null}>피분양자 회원가입(사업자)</JoinButton>
         </SignUpButtons>
       </SignUpMenu>
-      <OwnerJoin />
-      {/* <PersonalJoin /> */}
-      </LoginContainer>
-      
+      <OwnerJoin signStatus={signStatus} />
+      <PersonalJoin signStatus={signStatus} />
+    </LoginContainer>
   );
 };
 

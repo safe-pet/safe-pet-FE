@@ -1,17 +1,32 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Buttons } from "../useInForm/Buttons";
 
 export const Header = () => {
-  const [isLogedIn, setIsLogedIn] = useState(true);
+  const navigate = useNavigate();
+
+  const [isLogedIn, setIsLogedIn] = useState(false);
 
   return (
     <HeaderSection>
       {isLogedIn === false ? (
         <SignUpMenu>
           <SignUpButtons>
-            <JoinButton>로그인</JoinButton>
-            <JoinButton>회원가입</JoinButton>
+            <JoinButton
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              로그인
+            </JoinButton>
+            <JoinButton
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              회원가입
+            </JoinButton>
           </SignUpButtons>
         </SignUpMenu>
       ) : (
@@ -29,7 +44,7 @@ export const Header = () => {
         </LogedNav>
       )}
 
-      <LogoBox>
+      <LogoBox onClick={()=>{navigate("/")}}>
         <LogoImage
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbIgTs9%2FbtrNoKW1lWz%2FWq4Nhu3yWUs39ljni5VIN1%2Fimg.png"
           alt="main-LOGO"
@@ -120,11 +135,11 @@ const AlertImg = styled.img`
   height: 40px;
 
   cursor: pointer;
-  border-radius:10px;
-  background-color:white;
+  border-radius: 10px;
+  background-color: white;
   transition: 0.6s;
-  &:hover{
-    background-color:#fff88c;
+  &:hover {
+    background-color: #fff88c;
   }
 `;
 const ScrapImg = styled.img`
@@ -133,11 +148,11 @@ const ScrapImg = styled.img`
   height: 40px;
 
   cursor: pointer;
-  border-radius:10px;
-  background-color:white;
+  border-radius: 10px;
+  background-color: white;
   transition: 0.6s;
-  &:hover{
-    background-color:#fff88c;
+  &:hover {
+    background-color: #fff88c;
   }
 `;
 

@@ -76,8 +76,11 @@ const AvaterImg = styled.img`
 const ContentWrap = styled.div``;
 
 const PostTitle = styled.div``;
-const TimeToDate = styled.span``;
+const TimeToDate = styled.span`
+  color:gray;
+  font-size:12px;
+`;
 
 const Badges = styled.div`
-  padding: 10px;
+  padding: 5px;
 `;

@@ -1,53 +1,70 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { Inputs } from "../../components/useInForm/Inputs";
 import { Buttons } from "../../components/useInForm/Buttons";
+import { useNavigate } from "react-router-dom";
 
-export const PersonalJoin = () => {
+export const PersonalJoin = ({ signStatus }) => {
+  const navigate = useNavigate();
 
-
-    return(
-        <LoginForm>
-        <InputWrap>
-          <InputAuth>
-            <Inputs
-              type="text"
-              size="middle"
-              useType="main"
-              placeholder="가입할 Email을 입력해주세요!"
-            />
-            <Buttons size="small" useType="etc" content="인증하기" />
-          </InputAuth>
-          <p>인증여부 메세지</p>
-        </InputWrap>
-        <InputWrap>
+  return (
+    <LoginForm style={signStatus !== "일반" ? { display: "none" } : null}>
+      <InputWrap>
+        <InputAuth>
           <Inputs
-            type="password"
+            type="text"
             size="middle"
             useType="main"
-            placeholder="비밀번호를 입력해주세요!"
+            placeholder="가입할 Email을 입력해주세요!"
           />
-          <p>비밀번호 유효성 메세지</p>
-        </InputWrap>
-        <InputWrap>
-          <Inputs
-            type="password"
-            size="middle"
-            useType="main"
-            placeholder="비밀번호 확인!"
-          />
-          <p>비밀번호 일치 여부 메세지</p>
-        </InputWrap>
-        <ButtonsWrap>
-          <Buttons size="middle" useType="main" content="회원가입" />
+          <Buttons size="small" useType="etc" content="인증하기" />
+        </InputAuth>
+        <p>인증여부 메세지</p>
+      </InputWrap>
+      <InputWrap>
+        <Inputs
+          type="password"
+          size="middle"
+          useType="main"
+          placeholder="비밀번호를 입력해주세요!"
+        />
+        <p>비밀번호 유효성 메세지</p>
+      </InputWrap>
+      <InputWrap>
+        <Inputs
+          type="password"
+          size="middle"
+          useType="main"
+          placeholder="비밀번호 확인!"
+        />
+        <p>비밀번호 일치 여부 메세지</p>
+      </InputWrap>
+      <ButtonsWrap>
+        <Buttons size="middle" useType="main" content="회원가입" />
+        <div
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <Buttons size="middle" useType="cancel" content="홈으로" />
-        </ButtonsWrap>
-      </LoginForm>
+        </div>
+      </ButtonsWrap>
+    </LoginForm>
+  );
+};
 
-    )
-}
-
-
-const LoginForm = styled.form``;
+const LoginForm = styled.form`
+  animation: personalFade 0.7s;
+  & {
+    @keyframes personalFade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+`;
 
 const InputWrap = styled.div`
   margin-bottom: 20px;
