@@ -6,7 +6,7 @@ import { Buttons } from "../useInForm/Buttons";
 export const Header = () => {
   const navigate = useNavigate();
 
-  const [isLogedIn, setIsLogedIn] = useState(false);
+  const [isLogedIn, setIsLogedIn] = useState(true);
 
   return (
     <HeaderSection>
@@ -39,12 +39,18 @@ export const Header = () => {
             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcZ1F2H%2FbtrNv1dz1CN%2FfsUP1e0HXOryUy9rfjlP40%2Fimg.png"
             alt="https://icons8.com/icon/123441/favorites icon by https://icons8.com Icons8"
           />
-          <Buttons size="small" useType="etc" content="마이페이지" />
+          <div onClick={()=>{navigate("/mypage")}}>
+            <Buttons size="small" useType="etc" content="마이페이지" />
+          </div>
           <Buttons size="small" useType="etc" content="로그아웃" />
         </LogedNav>
       )}
 
-      <LogoBox onClick={()=>{navigate("/")}}>
+      <LogoBox
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <LogoImage
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbIgTs9%2FbtrNoKW1lWz%2FWq4Nhu3yWUs39ljni5VIN1%2Fimg.png"
           alt="main-LOGO"
