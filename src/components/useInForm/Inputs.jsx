@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Inputs = ({ type, size, useType, placeholder }) => {
+export const Inputs = ({ type, size, useType, placeholder,defaultValue }) => {
   let inputSize = [];
   let inputType = "";
   if (size === "small") {
@@ -35,6 +35,7 @@ export const Inputs = ({ type, size, useType, placeholder }) => {
       }}
       type={type}
       placeholder={placeholder}
+      defaultValue={defaultValue}
     />
   );
 };

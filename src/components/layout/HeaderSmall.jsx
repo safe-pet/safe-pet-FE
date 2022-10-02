@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Buttons } from "../useInForm/Buttons";
 
-export const Header = () => {
+export const HeaderSmall = () => {
   const navigate = useNavigate();
 
   const [isLogedIn, setIsLogedIn] = useState(true);
@@ -48,23 +48,12 @@ export const Header = () => {
           <Buttons size="small" useType="etc" content="로그아웃" />
         </LogedNav>
       )}
-
-      <LogoBox
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        <LogoImage
-          src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbIgTs9%2FbtrNoKW1lWz%2FWq4Nhu3yWUs39ljni5VIN1%2Fimg.png"
-          alt="main-LOGO"
-        />
-      </LogoBox>
     </HeaderSection>
   );
 };
 
 const HeaderSection = styled.section`
-  height: 300px;
+  height: 40px;
   padding: 30px;
 
   background-color: #fff88c;
