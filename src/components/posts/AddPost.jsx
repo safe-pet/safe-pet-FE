@@ -199,15 +199,15 @@ export const AddPost = () => {
           />
         </InputsWrap>
         <ButtonsWrap>
-          <div onClick={addposting}>
-            <Buttons size="overSize" useType="main" content="작성완료" />
-          </div>
           <div
             onClick={() => {
               navigate("/");
             }}
           >
             <Buttons size="overSize" useType="cancel" content="홈으로" />
+          </div>
+          <div onClick={addposting}>
+            <Buttons size="overSize" useType="main" content="작성완료" />
           </div>
         </ButtonsWrap>
       </AddPostContainer>

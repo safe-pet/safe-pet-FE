@@ -24,8 +24,8 @@ export const Posts = ({ status }) => {
 };
 
 const PostsContainer = styled.div`
-  margin: auto;
-  max-width: 1200px;
+  display: flex;
+  justify-content: center;
 
   animation: postsFadein 1s;
   & {
@@ -46,5 +46,14 @@ const GridBox = styled.div`
   align-items: center;
   justify-items: center;
   grid-template-columns: 350px 350px 350px 350px;
-  grid-gap: 30px;
+  grid-gap: 10px;
+
+  &{
+    @media all and (max-width:767px) {
+      grid-template-columns: 350px 350px
+    }
+    @media all and (max-width:480px) {
+      grid-template-columns: 350px
+    }
+  }
 `;

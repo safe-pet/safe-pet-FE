@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export const PostCard = () => {
+  const navigate = useNavigate()
+
   return (
-    <CardBox>
+    <CardBox onClick={()=>{navigate("/postdetail/1")}}>
       <ImgBox>
         <PostImg
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbao4eY%2FbtrNlQKKAs6%2F4aPkaIH8mojpCjip5O8KL0%2Fimg.png"
@@ -42,6 +45,9 @@ const CardBox = styled.div`
   &:hover {
     box-shadow: 1px 1px 7px 1px gray;
   }
+
+  
+
 `;
 
 const ImgBox = styled.div`

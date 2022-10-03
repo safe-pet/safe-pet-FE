@@ -65,6 +65,8 @@ const NavContainer = styled.section`
       }
     }
   }
+
+ 
 `;
 
 const MainNavStyle = styled.nav`
@@ -87,6 +89,13 @@ const NavListBox = styled.ul`
   & li:last-child {
     border-radius: 0px 10px 10px 0px;
   }
+
+  &{
+  @media all and (max-width:480px) {
+    width:80vw;
+    
+  }
+ }
 `;
 
 const NavLists = styled.li`
@@ -105,4 +114,5 @@ const NavLists = styled.li`
   &:hover {
     background-color: #ffdb5a;
   }
+
 `;

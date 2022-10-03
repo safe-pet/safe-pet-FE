@@ -13,6 +13,6 @@ export const LayoutSmall = ({ children }) => {
 };
 
 const LayoutContainer = styled.div`
+  width: 100vw;
   margin: auto;
-  
 `;

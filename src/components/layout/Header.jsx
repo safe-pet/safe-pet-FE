@@ -6,7 +6,7 @@ import { Buttons } from "../useInForm/Buttons";
 export const Header = () => {
   const navigate = useNavigate();
 
-  const [isLogedIn, setIsLogedIn] = useState(true);
+  const [isLogedIn, setIsLogedIn] = useState(false);
 
   return (
     <HeaderSection>
@@ -39,10 +39,18 @@ export const Header = () => {
             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcZ1F2H%2FbtrNv1dz1CN%2FfsUP1e0HXOryUy9rfjlP40%2Fimg.png"
             alt="https://icons8.com/icon/123441/favorites icon by https://icons8.com Icons8"
           />
-          <div onClick={()=>{navigate("/addpost")}}>
+          <div
+            onClick={() => {
+              navigate("/addpost");
+            }}
+          >
             <Buttons size="small" useType="etc" content="글쓰기" />
           </div>
-          <div onClick={()=>{navigate("/mypage")}}>
+          <div
+            onClick={() => {
+              navigate("/mypage");
+            }}
+          >
             <Buttons size="small" useType="etc" content="마이페이지" />
           </div>
           <Buttons size="small" useType="etc" content="로그아웃" />
@@ -64,16 +72,24 @@ export const Header = () => {
 };
 
 const HeaderSection = styled.section`
+  width: 100%;
   height: 300px;
-  padding: 30px;
+  padding-top: 20px;
+  padding-bottom:20px;
+  
 
   background-color: #fff88c;
+
+  @media all and (max-width:480px) {
+    width:120vw;
+  }
 `;
 
 const SignUpMenu = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+  margin-right:40px;
 
   & ul,
   li {
