@@ -25,4 +25,4 @@ OPEN_API<br>
 react-kakao-maps-sdk
 
 Hosting<br>
-vercel
+none

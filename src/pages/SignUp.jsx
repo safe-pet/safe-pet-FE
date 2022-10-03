@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { OwnerJoin } from "../components/signUpTab/OwnerJoin";
 import { PersonalJoin } from "../components/signUpTab/PersonalJoin";
 
 export const SignUp = () => {
+  const navigate = useNavigate();
+
   const [signStatus, setSignStatus] = useState("일반");
 
   const personal = ()=>{
@@ -15,7 +18,7 @@ export const SignUp = () => {
 
   return (
     <LoginContainer>
-      <LogoBox>
+      <LogoBox onClick={()=>{navigate("/")}}>
         <MainLogo
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbIgTs9%2FbtrNoKW1lWz%2FWq4Nhu3yWUs39ljni5VIN1%2Fimg.png"
           alt=""

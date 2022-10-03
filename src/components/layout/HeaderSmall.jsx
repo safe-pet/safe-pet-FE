@@ -10,6 +10,12 @@ export const HeaderSmall = () => {
 
   return (
     <HeaderSection>
+      <LogoBoxSmall onClick={()=>{navigate("/")}}>
+        <LogoImgSmall
+          src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3sSwo%2FbtrNGxP6Yog%2FmrS6RbZx1fNkeSzCtfPIJ1%2Fimg.png"
+          alt="메인로고"
+        />
+      </LogoBoxSmall>
       {isLogedIn === false ? (
         <SignUpMenu>
           <SignUpButtons>
@@ -39,10 +45,18 @@ export const HeaderSmall = () => {
             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcZ1F2H%2FbtrNv1dz1CN%2FfsUP1e0HXOryUy9rfjlP40%2Fimg.png"
             alt="https://icons8.com/icon/123441/favorites icon by https://icons8.com Icons8"
           />
-          <div onClick={()=>{navigate("/addpost")}}>
+          <div
+            onClick={() => {
+              navigate("/addpost");
+            }}
+          >
             <Buttons size="small" useType="etc" content="글쓰기" />
           </div>
-          <div onClick={()=>{navigate("/mypage")}}>
+          <div
+            onClick={() => {
+              navigate("/mypage");
+            }}
+          >
             <Buttons size="small" useType="etc" content="마이페이지" />
           </div>
           <Buttons size="small" useType="etc" content="로그아웃" />
@@ -56,7 +70,37 @@ const HeaderSection = styled.section`
   height: 40px;
   padding: 30px;
 
+  display: flex;
+  justify-content: space-between;
+
   background-color: #fff88c;
+`;
+
+const LogoBoxSmall = styled.div`
+  margin: 0;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const LogoImgSmall = styled.img`
+  width: 250px;
+  height: 100px;
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  animation: LogoImageFadein 1s;
+  & {
+    @keyframes LogoImageFadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 `;
 
 const SignUpMenu = styled.div`
@@ -118,11 +162,9 @@ const LogedNav = styled.div`
     @keyframes LogedNavFadein {
       from {
         opacity: 0;
-        width: 95%;
       }
       to {
         opacity: 1;
-        width: 100%;
       }
     }
   }

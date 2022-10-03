@@ -21,6 +21,18 @@ export const OwnerJoin = ({ signStatus }) => {
         <p>인증여부 메세지</p>
       </InputWrap>
       <InputWrap>
+        <InputAuth>
+          <Inputs
+            type="text"
+            size="middle"
+            useType="main"
+            placeholder="가입할 닉네임을 입력해주세요!"
+          />
+          <Buttons size="small" useType="etc" content="인증하기" />
+        </InputAuth>
+        <p>인증여부 메세지</p>
+      </InputWrap>
+      <InputWrap>
         <Inputs
           type="password"
           size="middle"

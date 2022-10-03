@@ -6,7 +6,7 @@ import { Buttons } from "../useInForm/Buttons";
 export const Header = () => {
   const navigate = useNavigate();
 
-  const [isLogedIn, setIsLogedIn] = useState(false);
+  const [isLogedIn, setIsLogedIn] = useState(true);
 
   return (
     <HeaderSection>

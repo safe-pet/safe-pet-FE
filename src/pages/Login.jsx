@@ -7,8 +7,10 @@ export const Login = () => {
   const navigate = useNavigate();
   return (
     <LoginContainer>
-      <LogoBox>
+      <LogoBox 
+      onClick={()=>{navigate("/")}}>
         <MainLogo
+        
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbIgTs9%2FbtrNoKW1lWz%2FWq4Nhu3yWUs39ljni5VIN1%2Fimg.png"
           alt=""
         />
