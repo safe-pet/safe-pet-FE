@@ -16,6 +16,7 @@ styled-components<br>
 react-query<br>
 sweetalert2<br>
 react-intersection-observer<br>
+browser-image-compression<br>
 
 axios<br>
 json-server
