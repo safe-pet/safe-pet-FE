@@ -1,11 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { TimeToToday } from "../../utils/timeToDate";
 
-export const PostCard = () => {
-  const navigate = useNavigate()
+import { useCallback,useState,useEffect } from "react";
+
+export const PostCard = ({
+  myLocation,
+  nickname,
+  title,
+  content,
+  createAt,
+}) => {
+  
+  const navigate = useNavigate();
+
 
   return (
-    <CardBox onClick={()=>{navigate("/postdetail/1")}}>
+    <CardBox
+      onClick={() => {
+        navigate("/postdetail/1");
+      }}
+    >
       <ImgBox>
         <PostImg
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbao4eY%2FbtrNlQKKAs6%2F4aPkaIH8mojpCjip5O8KL0%2Fimg.png"
@@ -20,8 +35,9 @@ export const PostCard = () => {
               alt="유저프로필"
             />
             <ContentWrap>
-              <PostTitle>제목</PostTitle>
-              <TimeToDate>몇 분 전</TimeToDate>
+              <PostNickname>{nickname}</PostNickname>
+              <PostTitle>{title}</PostTitle>
+              <TimeToDate>{TimeToToday(new Date(createAt))}</TimeToDate>
             </ContentWrap>
           </CardBodyTop>
         </CardBodyWrap>
@@ -35,7 +51,7 @@ const CardBox = styled.div`
   margin: 10px;
   padding: 10px;
   width: 270px;
-  height: 250px;
+  height: 280px;
 
   border-radius: 10px;
   box-shadow: 1px 1px 2px 1px gray;
@@ -45,9 +61,6 @@ const CardBox = styled.div`
   &:hover {
     box-shadow: 1px 1px 7px 1px gray;
   }
-
-  
-
 `;
 
 const ImgBox = styled.div`
@@ -82,9 +95,10 @@ const AvaterImg = styled.img`
 const ContentWrap = styled.div``;
 
 const PostTitle = styled.div``;
+const PostNickname = styled.div``;
 const TimeToDate = styled.span`
-  color:gray;
-  font-size:12px;
+  color: gray;
+  font-size: 12px;
 `;
 
 const Badges = styled.div`

@@ -84,6 +84,8 @@ export const postsSlice = createSlice({
     });
     builder.addCase(addPosts.fulfilled, (state, action) => {
       // Add user to the state array
+      console.log(current(state))
+      console.log(action)
       state.posts[0].push(action.payload);
       return state;
     });

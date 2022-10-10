@@ -11,8 +11,12 @@ import { LocationModal } from "../loaction/LocationModal";
 import imageCompression from "browser-image-compression";
 import Swal from "sweetalert2";
 
+import { useDispatch } from "react-redux";
+import { addPosts } from "../../redux/modules/postSlice";
+
 export const AddPost = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [imgView, setImgView] = useState([]);
   const [sendImage, setSendImage] = useState([]);
@@ -99,13 +103,24 @@ export const AddPost = () => {
   const [myLocation, setMyLocation] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  
+  let createDate = new Date();
 
-  let sendData = {};
+  // 닉네임, 프로필사진 등은 토큰으로 처리 예정
+  let sendData = {
+    myLocation: myLocation,
+    nickname:"닉네임1",
+    title:title,
+    content:content,
+    createAt:createDate,
+  };
+  
 
   const addposting = () => {
     console.log("작성완료~");
+    dispatch(addPosts(sendData))
   };
+
+
 
   // 위치 모달
   const [showModal, setShowModal] = useState(false);
