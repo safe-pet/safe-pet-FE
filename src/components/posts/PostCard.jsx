@@ -50,7 +50,7 @@ export const PostCard = ({
 const CardBox = styled.div`
   margin: 10px;
   padding: 10px;
-  width: 270px;
+  width: 220px;
   height: 280px;
 
   border-radius: 10px;

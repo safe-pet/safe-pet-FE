@@ -16,7 +16,7 @@ export const OwnerJoin = ({ signStatus }) => {
             useType="main"
             placeholder="가입할 Email을 입력해주세요!"
           />
-          <Buttons size="small" useType="etc" content="인증하기" />
+          <Buttons size="small" useType="etc" content="중복확인" />
         </InputAuth>
         <p>인증여부 메세지</p>
       </InputWrap>
@@ -28,7 +28,7 @@ export const OwnerJoin = ({ signStatus }) => {
             useType="main"
             placeholder="가입할 닉네임을 입력해주세요!"
           />
-          <Buttons size="small" useType="etc" content="인증하기" />
+          <Buttons size="small" useType="etc" content="중복확인" />
         </InputAuth>
         <p>인증여부 메세지</p>
       </InputWrap>

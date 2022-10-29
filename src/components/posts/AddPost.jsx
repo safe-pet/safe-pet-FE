@@ -235,7 +235,7 @@ const AddPostContainer = styled.form`
   margin-top: 130px;
   padding: 10px;
   max-width: 900px;
-
+  height:1250px;
   display: flex;
   flex-direction: column;
   border-radius: 20px;

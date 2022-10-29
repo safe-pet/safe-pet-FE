@@ -94,15 +94,6 @@ const GridBox = styled.div`
   justify-content: center;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 350px 350px 350px 350px;
-  grid-gap: 10px;
-
-  & {
-    @media all and (max-width: 767px) {
-      grid-template-columns: 350px 350px;
-    }
-    @media all and (max-width: 480px) {
-      grid-template-columns: 350px;
-    }
-  }
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-gap: 20px;
 `;
