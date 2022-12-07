@@ -6,10 +6,12 @@ import { MyScrap } from "../components/myPage/MyScrap";
 import { MyPosts } from "../components/myPage/MyPosts";
 
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const MyPage = () => {
+  const location = useLocation();
   const [status, setStatus] = useState("내 피드");
-
+  console.log(location);
   const changeStatus = (value) => {
     setStatus(value);
   };
